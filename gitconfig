@@ -1,0 +1,81 @@
+[user]
+    name = Beshr Kayali Reinholdsson
+    email = me@beshr.com
+
+[core]
+    editor = mg
+    pager = delta
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+
+[diff]
+    tool = difftastic
+    algorithm = histogram
+    colorMoved = zebra
+
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+    difftool = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[log]
+    date = iso
+
+[status]
+    showUntrackedFiles = all
+
+[branch]
+    sort = -committerdate
+
+[alias]
+    # Difftastic shortcut
+    dt = difftool
+    dft = "!f() { GIT_EXTERNAL_DIFF=difft git diff $@; }; f"
+
+    # Useful shortcuts
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    amend = commit --amend --no-edit
+
+    # Show what's about to be pushed
+    pushl = "!git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit @{u}.."
+
+[color]
+    ui = auto
+
+[pull]
+    rebase = false
+
+[push]
+    default = simple
+    autoSetupRemote = true
+
+[init]
+    defaultBranch = master
+
+[merge]
+    conflictstyle = zdiff3
+
+[rebase]
+    autosquash = true
+    autostash = true
+
+[fetch]
+    prune = true
