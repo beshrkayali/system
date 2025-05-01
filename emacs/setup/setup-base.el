@@ -57,7 +57,7 @@
 (setq default-frame-alist '((width . 190)  (height . 70)))
 
 ;; Position the initial frame in the center
-(defun center-frame ()
+(defun setup-base-center-frame ()
   "Center the frame on screen."
   (interactive)
   (let* ((frame-w (frame-pixel-width))
@@ -69,14 +69,14 @@
     (set-frame-position (selected-frame) pos-x pos-y)))
 
 ;; Apply frame settings after initialization
-(add-hook 'window-setup-hook 'center-frame)
+(add-hook 'window-setup-hook 'setup-base-center-frame)
 
 ;; For new frames in daemon mode
 (when (daemonp)
   (add-hook 'after-make-frame-functions
             (lambda (frame)
               (with-selected-frame frame
-                (run-with-idle-timer 0.1 nil 'center-frame)))))
+                (run-with-idle-timer 0.1 nil 'setup-base-center-frame)))))
 
 ;; System specific
 ;; - Mac
