@@ -24,37 +24,44 @@
 ;; Packages
 (setq package-selected-packages
       '(use-package
-        diminish              ;; Diminished modes are minor modes with no modeline display
-        ivy                   ;; Completion frontend
-        ivy-rich
-        all-the-icons-ivy-rich
-        ivy-posframe
-        ivy-prescient
-        flx
-        projectile            ;; For managing projects
-        counsel-projectile
+         diminish              ;; Diminished modes are minor modes with no modeline display
+         ivy                   ;; Completion frontend
+         ivy-rich
+         all-the-icons-ivy-rich
+         ivy-posframe
+         ivy-prescient
+         flx
+         projectile            ;; For managing projects
+         counsel-projectile
 
-        ;; Modes
-        caddyfile-mode
-        nim-mode
-        markdown-mode
-        yaml-mode
-        python-mode
-        vue-mode
-        typescript-mode
-        toml-mode
-        jinja2-mode
-        go-mode
-        dockerfile-mode
-        docker-compose-mode
-        meson-mode
-        olivetti
-        lispy
-        magit
+         ;; Modes
+         prog-mode
+         which-key
+         caddyfile-mode
+         nim-mode
+         markdown-mode
+         yaml-mode
+         rust-mode
+         python-mode
+         vue-mode
+         typescript-mode
+         toml-mode
+         jinja2-mode
+         go-mode
+         dockerfile-mode
+         docker-compose-mode
+         meson-mode
+         olivetti
+         lispy
+         magit
+         compile
+         whitespace
+         smartparens
+         flycheck
 
-        ;; Extra
-        package-lint
-        universal-emotions-emoticons))
+         ;; Extra
+         package-lint
+         universal-emotions-emoticons))
 
 ;; Make this list definitive by preventing customization system from modifying it
 (put 'package-selected-packages 'standard-value
@@ -68,6 +75,7 @@
      (require 'setup-base)
      (require 'setup-appearance)
      (require 'setup-ivy)
+     (require 'setup-code)
      (require 'setup-projectile))))
 
 (provide 'init)
