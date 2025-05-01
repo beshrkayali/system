@@ -22,7 +22,7 @@
 (column-number-mode t)                           ; Show column number in modeline
 (global-hl-line-mode 1)                          ; Highlight current line
 (setq ring-bell-function 'ignore)                ; Disable bell
-(setq-default tab-width 4)     
+(setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)              ; Use spaces instead of tabs
 (delete-selection-mode 1)                        ; Replace selection when typing
 (global-auto-revert-mode 1)                      ; Auto-refresh buffers when files change

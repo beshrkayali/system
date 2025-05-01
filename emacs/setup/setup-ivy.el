@@ -70,7 +70,7 @@
 
   ;; Use faster search tools when available
   (when (executable-find "rg")
-    (setq counsel-grep-base-command 
+    (setq counsel-grep-base-command
           "rg -i -M 120 --no-heading --line-number --color never %s %s"))
 
   ;; Settings for counsel-find-file

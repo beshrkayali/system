@@ -45,7 +45,7 @@
           :mode-line-position "#444466"
           :mode-line-fg "white")
       ;; Light theme colors
-        '(:mode-line-accent "#bbddff" 
+        '(:mode-line-accent "#bbddff"
           :mode-line-buffer "#d0e0f0"
           :mode-line-position "#e0e0ff"
           :mode-line-fg "black"))))

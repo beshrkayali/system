@@ -6,7 +6,7 @@
 ; (when (file-exists-p custom-file) (load custom-file))
 
 ;; Packages
-(setq package-selected-packages 
+(setq package-selected-packages
       '(use-package
         diminish              ;; Diminished modes are minor modes with no modeline display
         ivy                   ;; Completion frontend
@@ -41,7 +41,7 @@
      ))
 
 ;; Make this list definitive by preventing customization system from modifying it
-(put 'package-selected-packages 'standard-value 
+(put 'package-selected-packages 'standard-value
      (list (custom-quote package-selected-packages)))
 
 ;; Setup things
@@ -54,4 +54,3 @@
      (require 'setup-ivy)
      (require 'setup-projectile)
      )))
-

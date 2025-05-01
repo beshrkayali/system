@@ -71,7 +71,7 @@ compress() {
 }
 
 # Better word separation
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>' 
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # Aliases
 alias ls='eza'
@@ -83,4 +83,3 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/zsh-autopair/autopair.zsh
 source $HOMEBREW_PREFIX/opt/spaceship/spaceship.zsh
-

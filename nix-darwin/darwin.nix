@@ -139,7 +139,7 @@
   users.users.beshr = {
     name = "beshr";
     home = "/Users/beshr";
-    shell = pkgs.zsh; 
+    shell = pkgs.zsh;
     description = "Beshr Kayali Reinholdsson";
     gid = 20;
     isHidden = false;
@@ -163,7 +163,7 @@
   system.defaults = {
     screencapture.location = "~/Pictures/screenshots";
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
-    
+
     NSGlobalDomain = {
       AppleKeyboardUIMode = 3;
     };
