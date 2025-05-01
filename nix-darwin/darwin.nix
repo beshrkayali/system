@@ -56,6 +56,7 @@
       "fzf"
       "bandwhich"
       "difftastic"
+      "pandoc"
       "uv"
       "pre-commit"
       "zsh-syntax-highlighting"
