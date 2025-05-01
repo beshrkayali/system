@@ -120,13 +120,6 @@ config.keys = {
       mods = 'CMD|SHIFT',
       action = wezterm.action.ReloadConfiguration,
    },
-
-   -- Utilities
-   {
-      key = 'l',
-      mods = 'ALT',
-      action = wezterm.action.ShowLauncher
-   },
 }
 
 --------------------------------------------------
