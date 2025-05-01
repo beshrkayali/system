@@ -142,6 +142,7 @@
 (use-package ivy-posframe
   :ensure t
   :after ivy
+  :diminish
   :custom
   (ivy-posframe-display-functions-alist
    '((swiper . ivy-posframe-display-at-point)
