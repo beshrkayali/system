@@ -35,6 +35,7 @@
          counsel-projectile
 
          ;; Modes
+         ag
          company
          company-box
          nix-mode
