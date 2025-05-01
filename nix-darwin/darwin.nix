@@ -145,7 +145,7 @@
     home = "/Users/beshr";
     shell = pkgs.zsh;
     description = "Beshr Kayali Reinholdsson";
-    gid = 20;
+    gid = 20;  # Staff
     isHidden = false;
   };
 
@@ -178,7 +178,7 @@
       show-process-indicators = false;
       show-recents = false;
       static-only = true;
-      tilesize = 48;
+      tilesize = 32;
     };
 
     finder = {
@@ -189,5 +189,4 @@
       ShowStatusBar = true;
     };
   };
-
 }
