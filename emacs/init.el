@@ -50,6 +50,7 @@
          rust-mode
          python-mode
          vue-mode
+         lua-mode
          typescript-mode
          toml-mode
          jinja2-mode
