@@ -24,17 +24,22 @@
 ;; Packages
 (setq package-selected-packages
       '(use-package
-         diminish              ;; Diminished modes are minor modes with no modeline display
-         ivy                   ;; Completion frontend
+         diminish ;; Diminished modes are minor modes with no modeline display
+         ivy      ;; Completion frontend
          ivy-rich
          all-the-icons-ivy-rich
          ivy-posframe
          ivy-prescient
          flx
-         projectile            ;; For managing projects
+         projectile ;; For managing projects
          counsel-projectile
 
          ;; Modes
+         company
+         company-box
+         nix-mode
+         yasnippet
+         yasnippet-snippets
          prog-mode
          which-key
          caddyfile-mode

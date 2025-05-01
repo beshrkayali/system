@@ -207,6 +207,57 @@
   (flycheck-indication-mode 'right-fringe)
   (flycheck-check-syntax-automatically '(save mode-enabled)))
 
+;; Auto-completion with Company
+(use-package company
+  :ensure t
+  :diminish
+  :hook (prog-mode . company-mode)
+  :bind (:map company-active-map
+              ("C-n" . company-select-next)
+              ("C-p" . company-select-previous)
+              ("<tab>" . company-complete-common-or-cycle)
+              :map company-search-map
+              ("C-n" . company-select-next)
+              ("C-p" . company-select-previous))
+  :custom
+  (company-idle-delay 0.1)
+  (company-minimum-prefix-length 2)
+  (company-tooltip-align-annotations t)
+  (company-show-numbers t)
+  (company-tooltip-limit 10)
+  (company-tooltip-flip-when-above t)
+  (company-require-match nil)
+  (company-selection-wrap-around t)
+  :config
+  ;; Use company-capf as the first backend for better LSP integration
+  (setq company-backends '(company-capf
+                           company-files
+                           (company-dabbrev-code company-keywords)
+                           company-dabbrev)))
+
+;; Better company UI
+(use-package company-box
+  :ensure t
+  :after company
+  :diminish
+  :hook (company-mode . company-box-mode)
+  :custom
+  (company-box-icons-alist 'company-box-icons-all-the-icons)
+  (company-box-doc-delay 0.3))
+
+;; Yasnippet for code templates
+(use-package yasnippet
+  :ensure t
+  :diminish yas-minor-mode
+  :hook (prog-mode . yas-minor-mode)
+  :config
+  (yas-reload-all))
+
+;; Common snippets collection
+(use-package yasnippet-snippets
+  :ensure t
+  :after yasnippet)
+
 (message "Code setup complete.")
 (provide 'setup-code)
 ;;; setup-code.el ends here
