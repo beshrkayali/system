@@ -57,6 +57,7 @@
       "bandwhich"
       "difftastic"
       "uv"
+      "pre-commit"
       "zsh-syntax-highlighting"
       "zsh-autosuggestions"
       "zsh-autopair"
@@ -98,7 +99,11 @@
     # Define symlinks as source -> target pairs
     symlinks = [
       # Format: [source target]
+      # - Nix Darwin
       ["${repoPath}/nix-darwin" "/etc/nix-darwin"]
+      # - Emacs
+      ["${repoPath}/emacs" "${homeDir}/.emacs.d"]
+      # - Other dotfiles
       ["${repoPath}/wezterm.lua" "${homeDir}/.wezterm.lua"]
       ["${repoPath}/zshrc.zsh" "${homeDir}/.zshrc"]
       ["${repoPath}/tmux.conf" "${homeDir}/.tmux.conf"]

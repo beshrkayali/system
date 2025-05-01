@@ -1,0 +1,13 @@
+# Ignore all
+/*
+!.gitignore
+
+# Except
+!init.el
+!setup/
+!snippets/
+
+*~
+\#*\#
+\.#*
+.#*.*
