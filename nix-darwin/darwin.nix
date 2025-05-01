@@ -55,6 +55,7 @@
       "dust"
       "delta"
       "fzf"
+      "glow"
       "bandwhich"
       "difftastic"
       "pandoc"
