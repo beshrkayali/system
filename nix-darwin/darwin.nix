@@ -50,6 +50,7 @@
       "tmux"
       "tpm"
       "mg"
+      "ag"
       "eza"
       "dust"
       "delta"
