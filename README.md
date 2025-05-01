@@ -22,4 +22,4 @@ It uses:
 
 - Run `darwin-rebuild switch --flake ~/src/system/nix-darwin`
 
-> This will create a symlink `/etc/nix-darwin -> /src/system/nix-darwin`, so it's possible to run `darwin-rebuild switch` the next time.
+> This will create a symlink `/etc/nix-darwin -> ~/src/system/nix-darwin`, so it's possible to run `darwin-rebuild switch` the next time.
