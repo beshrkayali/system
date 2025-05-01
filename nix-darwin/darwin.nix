@@ -57,6 +57,8 @@
       "bandwhich"
       "difftastic"
       "pandoc"
+      "go"
+      "rust"
       "uv"
       "pre-commit"
       "zsh-syntax-highlighting"
