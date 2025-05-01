@@ -27,6 +27,8 @@
 (defvar warning-minimum-log-level)
 (setq warning-minimum-log-level :emergency)      ; Only show the most critical warnings
 (setq warning-suppress-log-types '((comp)))      ; Silence compiler warnings
+(setq use-package-verbose nil)                   ; Suppress package loading messages
+(setq warning-minimum-level :error)              ; Only show errors, not warnings
 (show-paren-mode 1)                              ; Highlight matching parentheses - essential!
 (tool-bar-mode -1)                               ; Remove toolbar for more screen space
 (menu-bar-mode -1)                               ; Remove menu bar for cleaner look
@@ -49,17 +51,41 @@
 ;; Diminish some modes
 (when (require 'diminish nil 'noerror)
   (diminish 'auto-revert-mode)
-  (diminish 'eldoc-mode)
-  (diminish 'ivy-posframe))
+  (diminish 'eldoc-mode))
+
+;; Set default frame size and center position
+(setq default-frame-alist '((width . 190)  (height . 70)))
+
+;; Position the initial frame in the center
+(defun center-frame ()
+  "Center the frame on screen."
+  (interactive)
+  (let* ((frame-w (frame-pixel-width))
+         (frame-h (frame-pixel-height))
+         (screen-w (display-pixel-width))
+         (screen-h (display-pixel-height))
+         (pos-x (/ (- screen-w frame-w) 2))
+         (pos-y (/ (- screen-h frame-h) 2)))
+    (set-frame-position (selected-frame) pos-x pos-y)))
+
+;; Apply frame settings after initialization
+(add-hook 'window-setup-hook 'center-frame)
+
+;; For new frames in daemon mode
+(when (daemonp)
+  (add-hook 'after-make-frame-functions
+            (lambda (frame)
+              (with-selected-frame frame
+                (run-with-idle-timer 0.1 nil 'center-frame)))))
 
 ;; System specific
 ;; - Mac
 (when (eq system-type 'darwin)
-  (setq mac-command-modifier 'meta)              ; Use command as Meta - feels more natural on Mac
-  (setq mac-option-modifier 'super)              ; Use option as Super
-  (setq mac-right-option-modifier 'none)         ; Right option for special characters
+  (setq mac-command-modifier 'meta) ; Use command as Meta - feels more natural on Mac
+  (setq mac-option-modifier 'super) ; Use option as Super
+  (setq mac-right-option-modifier 'none) ; Right option for special characters
   (add-to-list 'default-frame-alist
-               '(ns-transparent-titlebar . t))   ; Clean titlebar
+               '(ns-transparent-titlebar . t)) ; Clean titlebar
   (add-to-list 'default-frame-alist
                '(ns-appearance . dark)))         ; Match system appearance
 
