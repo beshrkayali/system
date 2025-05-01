@@ -1,9 +1,25 @@
+;;; init.el --- Personal configuration for BKR -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2025 BKR
+
+;; Author: Beshr Kayali Reinholdsson <me@beshr.com>
+;; URL: https://github.com/beshrkayali/system
+;; Version: 2025.4
+;; Package-Requires: ((emacs "30.1"))
+
+;;; Commentary:
+
+;; Main initialization file for my Emacs setup.
+;; Loads modular configuration files from the setup directory.
+
+;;; Code:
+
 ;; Load additional setup scripts
 (add-to-list 'load-path (expand-file-name "setup" user-emacs-directory))
 
 ;; Store customizations in a separate file, for now ignore it
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-; (when (file-exists-p custom-file) (load custom-file))
+;; (when (file-exists-p custom-file) (load custom-file))
 
 ;; Packages
 (setq package-selected-packages
@@ -37,8 +53,8 @@
         magit
 
         ;; Extra
-        universal-emotions-emoticons
-     ))
+        package-lint
+        universal-emotions-emoticons))
 
 ;; Make this list definitive by preventing customization system from modifying it
 (put 'package-selected-packages 'standard-value
@@ -49,8 +65,10 @@
  'after-init-hook
  (lambda ()
    (progn
-     (require 'setup-emacs)
-     (require 'setup-theme)
+     (require 'setup-base)
+     (require 'setup-appearance)
      (require 'setup-ivy)
-     (require 'setup-projectile)
-     )))
+     (require 'setup-projectile))))
+
+(provide 'init)
+;;; init.el ends here

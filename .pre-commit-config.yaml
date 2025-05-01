@@ -22,3 +22,44 @@ repos:
     -   id: remove-crlf
     -   id: forbid-tabs
         exclude: (Makefile|\.mk|go\.mod|go\.sum|\.gitmodules)
+
+
+# Local Emacs hooks using Emacs in batch mode
+-   repo: local
+    hooks:
+    -   id: checkdoc
+        name: Emacs Checkdoc
+        entry: >
+          emacs --batch -Q --eval '(setq checkdoc-create-error-function (lambda (text start end &optional unfixable) (error text)))'
+          -l checkdoc -f checkdoc-current-buffer
+        language: system
+        files: '\.el$'
+        exclude: '\.dir-locals\.el$'
+
+    -   id: package-lint
+        name: Emacs Package-Lint
+        entry: emacs --batch -Q --eval "(progn
+                (require 'package)
+                (add-to-list 'package-archives '(\"melpa\" . \"https://melpa.org/packages/\") t)
+                (package-initialize)
+                (unless (package-installed-p 'package-lint)
+                  (package-refresh-contents)
+                  (package-install 'package-lint))
+                (require 'package-lint))"
+                -f package-lint-batch-and-exit
+        language: system
+        files: '\.el$'
+        exclude: '\.dir-locals\.el$'
+
+    -   id: indent-elisp
+        name: Format Emacs Lisp
+        language: system
+        entry: >
+          emacs --batch -Q --eval '(progn
+          (setq indent-tabs-mode nil)
+          (find-file (car command-line-args-left))
+          (indent-region (point-min) (point-max))
+          (untabify (point-min) (point-max))
+          (save-buffer))'
+        files: '\.el$'
+        exclude: '\.dir-locals\.el$'

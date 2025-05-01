@@ -1,5 +1,19 @@
-; Cnfiguration for Ivy, Counsel, and Swiper with some customizations
+;;; setup-ivy.el --- Enhanced Ivy completion framework configuration -*- lexical-binding: t; -*-
 
+;; Copyright (C) 2025 BKR
+
+;; Author: Beshr Kayali Reinholdsson <me@beshr.com>
+;; URL: https://github.com/beshrkayali/system
+;; Version: 2025.4
+;; Package-Requires: ((emacs "30.1") (ivy "0.13.0") (counsel "0.13.0") (swiper "0.13.0"))
+
+;;; Commentary:
+
+;; Complete configuration for Ivy, Counsel, and Swiper
+;; with modern improvements and customizations for enhanced
+;; completion and navigation experience.
+
+;;; Code:
 
 ;; Core Ivy setup
 (use-package ivy
@@ -135,8 +149,7 @@
      (counsel-M-x . ivy-display-function-fallback)
      (t . ivy-posframe-display-at-frame-center)))
   :config
-  (ivy-posframe-mode 1)
-  )
+  (ivy-posframe-mode 1))
 
 ;; Mac-specific settings
 (when (eq system-type 'darwin)

@@ -1,4 +1,20 @@
-;;; Projectile configuration (assumes setup-ivy.el is loaded)
+;;; setup-projectile.el --- Project navigation and management with Ivy completion -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2025 BKR
+
+;; Author: Beshr Kayali Reinholdsson <me@beshr.com>
+;; URL: https://github.com/beshrkayali/system
+;; Version: 2025.4
+;; Package-Requires: ((emacs "30.1") (projectile "2.8.0") (counsel-projectile "0.3.0"))
+
+;;; Commentary:
+
+;; Focused project management configuration using Projectile with
+;; Ivy integration for enhanced project navigation, discovery,
+;; and management.  This module assumes setup-ivy.el is loaded.
+;; Includes recursive project discovery and optimization for fast tools.
+
+;;; Code:
 
 (use-package projectile
   :ensure t
@@ -49,7 +65,10 @@
   (projectile-mode +1)
 
   ;; Integrate with savehist for persistence
-  (add-to-list 'savehist-additional-variables 'projectile-project-command-history))
+  (add-to-list 'savehist-additional-variables 'projectile-project-command-history)
+
+  ;; Explicitly run project discovery
+  (projectile-discover-projects-in-search-path))
 
 ;; Add counsel-projectile for Ivy integration
 (use-package counsel-projectile
@@ -65,11 +84,6 @@
   :bind (:map projectile-command-map
               ("v" . magit-status)))
 
-;; Explicitly run project discovery after config is loaded
-(with-eval-after-load 'projectile
-  (projectile-discover-projects-in-search-path))
-
-;; --
-
 (message "Projectile config complete.")
 (provide 'setup-projectile)
+;;; setup-projectile.el ends here

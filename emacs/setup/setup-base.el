@@ -1,4 +1,19 @@
-; Emacs Base Config
+;;; setup-base.el --- Base configuration for my setup -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2025 BKR
+
+;; Author: Beshr Kayali Reinholdsson <me@beshr.com>
+;; URL: https://github.com/beshrkayali/system
+;; Version: 2025.4
+;; Package-Requires: ((emacs "30.1"))
+
+;;; Commentary:
+
+;; This file contains base configuration for Emacs, setting up package
+;; repositories and sensible defaults for a cleaner, more efficient
+;; editing experience.
+
+;;; Code:
 
 ;; Melpa
 (require 'package)
@@ -35,8 +50,7 @@
 (when (require 'diminish nil 'noerror)
   (diminish 'auto-revert-mode)
   (diminish 'eldoc-mode)
-  (diminish 'ivy-posframe)
-)
+  (diminish 'ivy-posframe))
 
 ;; System specific
 ;; - Mac
@@ -47,10 +61,8 @@
   (add-to-list 'default-frame-alist
                '(ns-transparent-titlebar . t))   ; Clean titlebar
   (add-to-list 'default-frame-alist
-               '(ns-appearance . dark))          ; Match system appearance
-)
-
-;; --
+               '(ns-appearance . dark)))         ; Match system appearance
 
 (message "Base emacs config complete.")
-(provide 'setup-emacs)
+(provide 'setup-base)
+;;; setup-base.el ends here
