@@ -52,6 +52,7 @@
       "mg"
       "ag"
       "eza"
+      "nmap"
       "dust"
       "delta"
       "fzf"
