@@ -60,6 +60,7 @@
       "bandwhich"
       "difftastic"
       "pandoc"
+      "zola"
       "go"
       "rust"
       "uv"
