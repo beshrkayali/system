@@ -1,6 +1,6 @@
 # System
 
-This repo holds my system config, which as of March 2025, is a macOS.
+This repo holds my system config, which as of [April 2025](https://log.beshr.com/switching-to-macos-again/), is macOS.
 
 It uses:
 
