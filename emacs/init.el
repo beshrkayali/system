@@ -63,7 +63,6 @@
          magit
          compile
          whitespace
-         smartparens
          flycheck
 
          ;; Extra

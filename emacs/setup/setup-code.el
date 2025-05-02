@@ -190,13 +190,6 @@
   (whitespace-line-column 100)
   (whitespace-style '(face trailing lines-tail)))
 
-;; Smart parentheses
-(use-package smartparens
-  :ensure t
-  :diminish
-  :hook ((prog-mode . smartparens-mode))
-  :config
-  (require 'smartparens-config))
 
 ;; Setup flycheck for syntax checking
 (use-package flycheck
