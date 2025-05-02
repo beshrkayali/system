@@ -44,6 +44,14 @@
     };
 
     brews = [
+      "autoconf"
+      "autoconf-archive"
+      "automake"
+      "ccache"
+      "cmake"
+      "nasm"
+      "ninja"
+      "pkg-config"
       "spaceship"
       "node"
       "pnpm"
@@ -64,6 +72,8 @@
       "go"
       "rust"
       "uv"
+      "podman"
+      "podman-compose"
       "pre-commit"
       "zsh-syntax-highlighting"
       "zsh-autosuggestions"
@@ -86,6 +96,7 @@
       "iina"
       "nextcloud"
       "obsidian"
+      "telegram"
     ];
   };
 
