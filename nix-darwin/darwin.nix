@@ -89,11 +89,12 @@
     # Homebrew casks
     casks = [
       "emacs"
-      "firefox"
       "orion"
       "wezterm"
       "hammerspoon"
       "iina"
+      "little-snitch"
+      "rectangle"
       "nextcloud"
       "obsidian"
       "telegram"
