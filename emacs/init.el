@@ -35,6 +35,7 @@
          counsel-projectile
 
          ;; Modes
+         zoom-window
          ag
          company
          company-box

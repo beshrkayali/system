@@ -53,6 +53,16 @@
   (diminish 'auto-revert-mode)
   (diminish 'eldoc-mode))
 
+
+;; Zoom in/out on windows
+(use-package zoom-window
+  :ensure t
+  :diminish
+  :bind (("s-<return>" . 'zoom-window-zoom)):custom
+  (zoom-window-mode-line-color "#6b7ec3") ; Blue-ish, works on white/dark theme variations
+  )
+
+
 ;; Set default frame size and center position
 (setq default-frame-alist '((width . 190)  (height . 70)))
 
