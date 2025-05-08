@@ -50,6 +50,8 @@
       "ccache"
       "cmake"
       "xmake"
+      "clang-format"
+      "7-zip"
       "nasm"
       "ninja"
       "pkg-config"
