@@ -44,14 +44,17 @@
     };
 
     brews = [
+      "llvm"
+      # For clang-format & clang tidy
+      # ln -s $(brew --prefix llvm)/bin/clang-format /opt/homebrew/bin/clang-format
+      # ln -s $(brew --prefix llvm)/bin/clang-tidy /opt/homebrew/bin/clang-tidy
       "autoconf"
       "autoconf-archive"
       "automake"
       "ccache"
       "cmake"
       "xmake"
-      "clang-format"
-      "7-zip"
+      "p7zip"
       "nasm"
       "ninja"
       "pkg-config"
@@ -96,6 +99,7 @@
       "orion"
       "waterfox"
       "netnewswire"
+      "the-unarchiver"
       "wezterm"
       "hammerspoon"
       "iina"
