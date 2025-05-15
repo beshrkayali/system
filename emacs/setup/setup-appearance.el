@@ -114,7 +114,7 @@
     ;; Primary font
     (set-face-attribute 'default nil
                         :family "Pragmasevka Nerd Font"
-                        :height 140
+                        :height 180
                         :weight 'normal)
 
     ;; Fixed-pitch face inherits from default
