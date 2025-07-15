@@ -100,10 +100,13 @@
     casks = [
       "emacs"
       "orion"
+      "kdenlive"
       "waterfox"
       "netnewswire"
       "the-unarchiver"
       "wezterm"
+      "godot"
+      "inkscape"
       "hammerspoon"
       "cyberduck"
       "ollama"
@@ -113,6 +116,7 @@
       "itsycal"
       "numi"
       "openemu"
+      "handbrake"
       "little-snitch"
       "jellyfin-media-player"
       "rectangle"
@@ -202,6 +206,7 @@
   # System defaults
   system.defaults = {
     screencapture.location = "~/Pictures/screenshots";
+    screencapture.disable-shadow = true;
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
 
     NSGlobalDomain = {
