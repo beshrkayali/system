@@ -134,6 +134,12 @@ alias showfiles="defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hidefiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
 
 
+# ----- Additions to PATH ------
+path+=('/Applications/Godot.app/Contents/MacOS/Godot')
+
+# ---- Global env vars
+
+
 # ----- macOS Specific Settings -----
 # System preferences for better macOS experience
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true  # No .DS_Store on network drives
