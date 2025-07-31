@@ -105,6 +105,7 @@
       "netnewswire"
       "the-unarchiver"
       "wezterm"
+      "ghostty"
       "godot"
       "inkscape"
       "hammerspoon"
@@ -122,6 +123,7 @@
       "rectangle"
       "nextcloud"
       "obsidian"
+      "squeak"
       "telegram"
     ];
   };
