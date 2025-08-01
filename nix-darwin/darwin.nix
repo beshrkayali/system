@@ -154,6 +154,7 @@
       ["${repoPath}/zshrc.zsh" "${homeDir}/.zshrc"]
       ["${repoPath}/tmux.conf" "${homeDir}/.tmux.conf"]
       ["${repoPath}/gitconfig" "${homeDir}/.gitconfig"]
+      ["${repoPath}/ghostty" "${homeDir}/.config/ghostty/config"]
     ];
 
     # Function to generate symlink commands
