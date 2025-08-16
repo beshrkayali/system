@@ -24,15 +24,7 @@
     htop
   ];
 
-  nix.gc = {
-    automatic = true;
-    interval =   {
-      Hour = 3;
-      Minute = 15;
-      Weekday = 7;
-    };
-    options = "--delete-older-than 7d";
-  };
+  nix.enable = false;
 
   # Homebrew
   # ---------
@@ -79,6 +71,7 @@
       "go"
       "rust"
       "uv"
+      "llama.cpp"
       "podman"
       "podman-compose"
       "spaceship"
@@ -110,12 +103,12 @@
       "inkscape"
       "hammerspoon"
       "cyberduck"
-      "ollama"
       "visual-studio-code"
       "iina"
       "cap"
       "itsycal"
       "numi"
+      "keycastr"
       "openemu"
       "handbrake"
       "little-snitch"
