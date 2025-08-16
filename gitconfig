@@ -61,7 +61,6 @@
     ui = auto
 
 [pull]
-    rebase = false
 
 [push]
     default = simple
